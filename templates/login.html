@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CropsIT</title>
+    <div class="container mx-auto">
+      <div class="flex flex-col text-center w-full mb-20">
+<img src="static/img/logo.png" style="margin-left: 44%;" width="200px" height="200px">
+        <p style="color: black;font-family: Arial, Helvetica, sans-serif;font-size: 25px;">&nbsp;&nbsp;&nbsp;&nbsp;Portable Soil Analysis and Crop Suggestion System</p>
+        <div class="flex mx-auto border-2 border-green-500 rounded overflow-hidden mt-6">
+          <a href="{{url_for('login')}}" style="border-color: green" class="py-1 px-4 bg-green-500 text-white " role="button">Sign In</a>
+          <a href="{{ url_for('signup')}}" class="py-1 px-4 focus:outline-none" role="button">Sign Up</a>
+        </div>
+      </div>
+ 
+      <link href="https://unpkg.com/tailwindcss@%5E2/dist/tailwind.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'main.css') }}">
+</head>
+
+
+<body style="background-color:#f0fff9;">
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> Sign In </h2>
+    <a href="{{ url_for('signup')}}"><h2 class="inactive underlineHover">Sign Up </h2></a>
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="{{ url_for('static', filename = 'user.png') }}" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form action="{{ url_for('result')}}" method="POST">
+      <input type="email" id="login" class="fadeIn second" name="email" placeholder="Email">
+      <input type="password" id="password" class="fadeIn third" name="pass" placeholder="Password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+</div>
+  </div>
+</div>
+</body>
+</html>
+
+

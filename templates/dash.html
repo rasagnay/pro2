@@ -1,0 +1,81 @@
+<html>
+
+  <header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <img src="{{ url_for('static', filename = 'img/logo.png') }}" id="icon" alt="User Icon" width="140px" height="140px"/>
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl"></span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-gray-900" href="#" style="color: green;"><b>HOME</b></a>
+        <a class="mr-5 hover:text-gray-900"><b>ABOUT</b></a>
+  <a class="mr-5 hover:text-gray-900"><b>MAJOR CROPS</b></a>
+        <a class="mr-5 hover:text-gray-900"><b>RELATED ARTICLES</b></a>
+        <a class="mr-5 hover:text-gray-900"><b>GUIDE</b></a>
+      </nav>
+        
+    </div>
+
+<link href="https://unpkg.com/tailwindcss@%5E2/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+    <body>
+   
+	<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="text-center mb-20">
+      <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4" ><b style="background-color: cornsilk;">Your Crop Suggestions</b></h1>
+      <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto"><u>Here are your Previous and Current logs of Crop Suggestions</u></p>
+    </div>
+
+    <div class="flex flex-wrap -m-4">
+	{% for h in heading %}
+    <div class="p-4 lg:w-1/4 sm:w-1/2 w-full">
+        
+        <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+        
+	
+        
+<b style="color: green;font-size: 20px;">
+
+
+            {{ h }} 
+       
+</b>
+    <br>
+		  
+        </nav>
+      </div>
+      
+	{% endfor %}
+  
+	</div>
+  <hr><br><br>
+	{% for q in answer %}
+    <div class="flex flex-wrap -m-4">
+	
+	{% for k,v in q.items() %}
+      <div class="p-4 lg:w-1/4 sm:w-1/2 w-full">
+        
+        <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+          
+		  <a>
+            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="w-3 h-3" viewBox="0 0 24 24">
+                <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+            </span>{{ v }}
+          </a>
+		  <hr>
+        </nav>
+      </div>
+	  {% endfor %}
+    </div>
+	{% endfor %}
+   
+  </div>
+</section>
+    </body>
+</html>
